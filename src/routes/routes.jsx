@@ -20,6 +20,9 @@ const router = createBrowserRouter([
     path: "*",
     element: <NotFound />,
   },
+  {
+    path:'linh'
+  }
 ]);
 
 export default router;
