@@ -1,13 +1,20 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import {useRef} from "react";
 
 export default function Detail() {
-  const location = useLocation();
-  const fullURL = `${location.pathname}${location.search}${location.hash}`;
+  const [name, setName] = useState("");
+  const renderCount = useRef(0);
+  console.log(renderCount);
+  useEffect(()=> {
+    renderCount.current = renderCount.current + 1
+  })
   return (
-    <div>
-      <h2>Thông tin về địa chỉ URL:</h2>
-      <p>Full URL: {fullURL}</p>
-    </div>
+    <>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <div>My name is {name}</div>
+      <div>I rendered {renderCount.current} times</div>
+    </>
   );
 }
