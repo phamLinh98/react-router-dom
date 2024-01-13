@@ -1,13 +1,17 @@
-import React from 'react'
-import {Link,useNavigate} from 'react-router-dom'
-
+import React, {useState,useEffect} from "react";
 export default function About() {
-  const navigate = useNavigate();
+  const [resourceType, setResource] = useState('post')
+  useEffect(()=> {
+   console.log('Linh');
+  },[])
   return (
+    <>
     <div>
-    <h1>Hello World</h1>
-    <Link to='/detail'>Test</Link>
-    <button onClick={()=> navigate('/detail')} >Chuyen trang</button>
-  </div>
-  )
+      <button onClick={()=> setResource('posts')}>post</button>
+      <button onClick={()=> setResource('users')}>user</button>
+      <button onClick={()=> setResource('comment')}>comment</button>
+    </div>
+    <h1>{resourceType}</h1>
+    </>
+  );
 }
