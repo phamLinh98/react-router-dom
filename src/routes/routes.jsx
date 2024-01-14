@@ -1,8 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/Home";
-import About from "../components/About";
 import NotFound from "../components/NotFound";
-import Detail from "../components/Detail";
+import UsingState from "../components/useState";
+import UsingEffect from "../components/useEffect";
+import UsingReducer from "../components/useReducer";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,16 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/about",
-    element: <About />,
+    path: "/effect",
+    element: <UsingEffect />
   },
   {
-    path: "/detail",
-    element: <Detail />,
+    path: "/reducer",
+    element: <UsingReducer />
+  },
+  {
+    path: "/state",
+    element: <UsingState />,
   },
   {
     path: "*",

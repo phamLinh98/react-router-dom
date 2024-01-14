@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import {useRef} from "react";
 
-export default function Detail() {
+export default function UsingState() {
   const [name, setName] = useState("");
   const renderCount = useRef(0);
   console.log(renderCount);
