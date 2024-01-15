@@ -19,11 +19,12 @@ export default function UsingReducer() {
   //Khoi tao init value ban dau, cung cap ham behind the scenes (Reducer) cho useReducer
   //   const initValue = { count: 0 };
   // tao 1 state de quan ly trang thai cho component nay
+
   const [state, dispatch] = useReducer(sauCanhGa, { count: 0 });
 
   useEffect(() => {
     console.log("Trang da duoc re-render lai");
-  });
+  },[]);
 
   //Cac menh lenh , action (dispatch là hàm gui action den reducer)
   const increment = () => {

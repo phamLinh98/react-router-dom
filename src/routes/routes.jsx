@@ -4,6 +4,7 @@ import NotFound from "../components/NotFound";
 import UsingState from "../components/useState";
 import UsingEffect from "../components/useEffect";
 import UsingReducer from "../components/useReducer";
+import Demomock from "../pages/demomock/Demomock";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +17,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/effect",
-    element: <UsingEffect />
+    element: <UsingEffect />,
   },
   {
     path: "/reducer",
-    element: <UsingReducer />
+    element: <UsingReducer />,
+  },
+  {
+    path: "/demomock",
+    element: <Demomock />,
   },
   {
     path: "/state",
