@@ -1,23 +1,15 @@
-import React from "react";
-import { useReducer } from "react";
-import { useEffect } from "react";
-import { demoReducer, loadAction } from "./+store/reducer";
+import React, { useContext } from "react";
+import DemoEffect from "./+store/effect";
+import { DemoStoreContext } from "./+store/effect";
 
 export default function Demomock() {
-  const [state, dispatch] = useReducer(demoReducer, {});
-
-  useEffect(() => {
-    dispatch(loadAction);
-    state.subcribe && state.subcribe.then(data=> {
-      dispatch({type:'Loaded',payload:data});
-    })
-  }, []);
+  const { state, dispatch } = useContext(DemoStoreContext);
   return (
-    <>
+    <DemoEffect>
       <ul>
-        {state.list &&
+        {state?.list &&
           state.list.map((item, index) => <li key={index}>{item.text}</li>)}
       </ul>
-    </>
+    </DemoEffect>
   );
 }
